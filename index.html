@@ -4,36 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q4 DRILL 1</title>
+
+    <style>
+
+
+        #backgroundtime {
+            background-image: url('https://i.pinimg.com/1200x/e2/b2/30/e2b23024d44bef322b02b909e6b64250.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            width: 100%;
+            margin-bottom: 20px;
+
+       
+
+        }
+
+
+
+    </style>
 </head>
 <body>
 
-    <h1>JAVASCRIPT CONDITIONAL STATEMENTS</h1>
-    <div container></div>
+    <h1>Electricity Consumption Classifier</h1>
+    <div class="container" id="backgroundtime"></div>
 
-    <input type="text" id="age" placeholder="Enter your age">
+    <input type="text" id="elec" placeholder="Enter your electricity consumption">
 
-    <button class="btn btn-info" onclick="checkAge()">Check Age</button>
+    <button class="btn btn-info" onclick="checkElec()">Consumption Classification</button>
+
 
     <script>
 
-        function checkAge(){
-            var age = document.getElementById("age").value;
+        function checkElec(){
+            var elec = document.getElementById("elec").value;
 
-            if(isNaN(age) || age < 0){
-                alert("Please enter a valid age.");
+            if(isNaN(elec) || elec < 0){
+                alert("Please enter a valid number.");
             }
-            else if (age<18){
-                alert("too young...");
+            else if (elec<100){
+                alert("Discounted redsidential rate");
             }
-        
 
-        else if(age>18){
-            alert("Wassup");
+            else if (elec <= 200){
+                alert("Normal residential rate");
+            }
+
+        else if(201 <= elec && elec <= 300){
+            alert("Typical electricity usage");
+
+        }
+
+            else if(301 <= elec && elec <= 500){
+            alert("High electricity usage");
+            
+
+        }
+
+         else if(elec>500){
+            alert("Heavy electricity usage");
+            
 
         }
 
         else {
-            alert("Age could not be determined");
+            alert("Consumption could not be determined");
         }
     }
     
